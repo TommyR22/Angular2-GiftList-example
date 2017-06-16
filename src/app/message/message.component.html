@@ -1,0 +1,75 @@
+<app-stepper [step]="2"></app-stepper>
+
+<app-ui-loader [visible]="isVisible"></app-ui-loader>
+
+<div class="row" style="padding-top: 20px">
+  <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+    <span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #a60766;"></span>
+    <small><strong>Inserisci la tua email e un messaggio di auguri da inviare:</strong></small>
+  </div>
+</div>
+
+<form #form="ngForm" style="padding-top: 10px">
+    <div class="row">
+    <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+      <div class="input-group">
+        <span class="input-group-addon euro-addon">€</span>
+        <input type="number" class="form-control" name="euro" aria-label="contributo" placeholder="Contributo libero" [(ngModel)]="contributo" required>
+        <span class="input-group-addon euro-addon">.00</span>
+      </div>
+    </div>
+  </div>
+    
+    <div class="row" style="padding-top: 20px">
+    <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+        <input type="text" class="form-control" name="regalato" id="textInout" placeholder="Regalato da.." [(ngModel)]="friend" required>
+    </div>
+  </div>
+    
+  <div class="row" style="padding-top: 20px">
+    <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+      <input type="email" class="form-control" name="email" id="emailInput" placeholder="Email" [(ngModel)]="cc" required pattern="^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$">
+    </div>
+  </div>
+
+  <div class="row" style="padding-top: 20px">
+    <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+      <textarea placeholder="Messaggio" class="form-control" rows="8" name="text" [(ngModel)]="mex" required  #email="ngModel"></textarea>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top: 10px">
+    <div class="col-xs-3 col-md-4 col-lg-5">
+    </div>
+    <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+      <div class="alert alert-danger" *ngIf="isError">
+        <strong>Errore</strong>: invio del messaggio non riuscito, riprovare.
+      </div>
+    </div>
+    <div class="col-xs-3 col-md-4 col-lg-5">
+    </div>
+  </div>
+
+  <div class="row" style="padding-top: 10px">
+    <div class="col-xs-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1 col-lg-offset-1">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true" style="color: #a60766;"></span>
+        <small><strong>Le informazioni per poter effettuare il bonifico bancario saranno inviate all'indirizzo <u>email</u> indicato.</strong></small>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top: 20px">
+    <div class="col-xs-2 col-md-4 col-lg-5">
+    </div>
+    <div class="col-xs-8 col-md-4 col-lg-2 text-center">
+      <button class="btn btn-custom" (click)="onSubmit()" [disabled]="!form.valid || email.errors?.pattern" type="button">Continua</button>
+    </div>
+    <div class="col-xs-2 col-md-4 col-lg-5">
+    </div>
+  </div>
+</form>
+

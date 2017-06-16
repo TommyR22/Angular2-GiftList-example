@@ -1,0 +1,88 @@
+<div class="container-fluid center_form">
+  <div class="row">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+          <div class="col-xs-6 col-md-4 col-lg-2 text-center">
+            <div class="data">
+              <span>2.6.2017</span>
+            </div>
+          </div>
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+        </div>
+
+        <div class="row footer">
+          <div class="col-xs-1 col-md-4 col-lg-4">
+          </div>
+          <div class="col-xs-10 col-md-4 col-lg-4 text-center" style="padding-top: 10px">
+            <div id="clockdiv">
+              <div>
+                <span class="days">{{days}}</span>
+                <div class="smalltext" style="color:#a60766">Days</div>
+              </div>
+              <div>
+                <span class="hours">{{hours}}</span>
+                <div class="smalltext" style="color:#a60766">Hours</div>
+              </div>
+              <div>
+                <span class="minutes">{{minutes}}</span>
+                <div class="smalltext" style="color:#a60766">Minutes</div>
+              </div>
+              <div>
+                <span class="seconds">{{seconds}}</span>
+                <div class="smalltext" style="color:#a60766">Seconds</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-1 col-md-4 col-lg-4">
+          </div>
+        </div>
+
+
+        <div class="row" style="padding-top: 50px">
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+          <div class="col-xs-6 col-md-4 col-lg-2">
+            <div class="form-group">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="password" name="password" required style="text-align:center">
+            </div>
+          </div>
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+          <div class="col-xs-6 col-md-4 col-lg-2 text-center">
+            <button type="submit" class="btn btn-custom btn-full" [disabled]="!form.valid">Continua</button>
+            <!--<a [routerLink]="['/signup']">Click here to Signup</a>-->
+          </div>
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+          <div class="col-xs-6 col-md-4 col-lg-2 text-center" style="padding-top: 10px">
+            <div class="alert alert-danger" *ngIf="isError">
+              <strong>Password</strong> non valida.
+            </div>
+          </div>
+          <div class="col-xs-3 col-md-4 col-lg-5">
+          </div>
+        </div>
+
+
+      </div>
+
+    </form>
+  </div>
+</div>
+
+

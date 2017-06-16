@@ -1,0 +1,50 @@
+<app-stepper [step]="2"></app-stepper>
+
+<div class="container center_form">
+  <div class="row">
+    <form #form="ngForm" (ngSubmit)="addAmico(newAmico.value)">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-xs-2 col-md-4 col-lg-5">
+          </div>
+          <div class="col-xs-8 col-md-4 col-lg-2">
+            <div class="input-group">
+              <input #newAmico type="text" class="form-control" id="inputName" placeholder="Nome" [(ngModel)]="nome" name="nome">
+              <span class="input-group-btn" style="width:0;">
+                <button class="btn btn-default btn-custom" type="button" type="submit">+</button>
+              </span>
+            </div>
+          </div>
+          <div class="col-xs-2 col-md-4 col-lg-5">
+          </div>
+        </div>
+
+
+        <div class="row" style="padding-top: 20px">
+          <div class="col-xs-2 col-md-4 col-lg-5">
+          </div>
+          <div class="col-xs-8 col-md-4 col-lg-2">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let amico of amici">{{amico}}</li>
+            </ul>
+          </div>
+          <div class="col-xs-2 col-md-4 col-lg-5">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-2 col-md-4 col-lg-5">
+          </div>
+          <div class="col-xs-8 col-md-4 col-lg-2 text-center">
+            <button class="btn btn-custom btn-full" [disabled]="!form.valid" (click)="onSubmit()">Continua</button>
+          </div>
+          <div class="col-xs-2 col-md-4 col-lg-5">
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+

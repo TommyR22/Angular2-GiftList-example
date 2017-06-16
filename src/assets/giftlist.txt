@@ -1,0 +1,6 @@
+[
+  {
+    "name":"Lista viaggi",
+    "img":"assets/img/travel.jpg"
+  }
+]

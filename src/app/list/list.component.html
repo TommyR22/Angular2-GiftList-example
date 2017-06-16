@@ -1,0 +1,7 @@
+<app-stepper [step]="1"></app-stepper>
+
+<div class="row hover-row" *ngFor='let obj of objects' [ngStyle]="{'background': 'transparent url(' + obj.img + ') no-repeat center center /cover'}" (click)="setGift(obj)">
+  <div class="col-xs-12 col-md-12" >
+    <h3><i><strong>{{obj.name}}</strong></i></h3>
+  </div>
+</div>

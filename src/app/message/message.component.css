@@ -1,0 +1,72 @@
+
+textarea:focus, input:focus, .uneditable-input:focus {
+  border-color: #a60766 !important;
+  box-shadow: 0 1px 1px #a60766 inset, 0 0 8px #a60766 !important;
+  outline: 0 none !important;
+}
+
+.btn-custom {
+  background-color: #a60766;
+  border-color: #a60766;
+  color: #fff;
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active {
+  background-color: #8e0657;
+  border-color: #750548;
+}
+.btn-custom.disabled:hover,
+.btn-custom.disabled:focus,
+.btn-custom.disabled:active,
+.btn-custom.disabled.active,
+.btn-custom[disabled]:hover,
+.btn-custom[disabled]:focus,
+.btn-custom[disabled]:active,
+.btn-custom[disabled].active,
+fieldset[disabled] .btn-custom:hover,
+fieldset[disabled] .btn-custom:focus,
+fieldset[disabled] .btn-custom:active,
+fieldset[disabled] .btn-custom.active {
+  background-color: #a60766;
+  border-color: #a60766;
+}
+
+
+
+.btn-custom:focus,.btn-custom:active {
+  outline: none !important;
+}
+
+
+input, textarea{
+  border-color: #a60766 !important;
+  background-color:#fff;
+  color: #000;
+  opacity: 0.7;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #a60766;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #a60766;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #a60766;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #a60766;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #a60766;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #a60766;
+}
+
+.euro-addon{
+    background-color:#a60766;
+    color:white;
+    border-color: #a60766 !important;
+}

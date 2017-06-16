@@ -1,0 +1,49 @@
+.size {
+  max-width: 50%; /* or to whatever you want here */
+  max-height: auto; /* or to whatever you want here */
+}
+
+.hover-row{
+  border-radius: 20px;
+  margin-top: 20px;
+  height: 250px;
+  color: #f2f2f2;
+  -webkit-transition: all .3s ease-in-out;
+  opacity: 0.6;
+}
+
+.hover-row:hover{
+  filter: none;
+  -webkit-filter: grayscale(0);
+  border-radius: 20px;
+  opacity:1;
+}
+
+.hover-row:active{
+  filter: none;
+  -webkit-filter: grayscale(0);
+  border-radius: 20px;
+  opacity:0.2;
+}
+
+@media screen and (max-width: 600px) {
+  .hover-row{
+    margin-top: 20px;
+    color: #f2f2f2;
+    opacity:1;
+    height: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 770px) {
+  .hover-row{
+    margin-top: 20px;
+    color: #f2f2f2;
+    opacity:1;
+    height: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

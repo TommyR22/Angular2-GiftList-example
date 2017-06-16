@@ -1,0 +1,17 @@
+.line {
+  width: 100%;
+  height: 3px;
+  background: #f2f2f2
+}
+
+.line.active {
+  width: 100%;
+  height: 3px;
+  background: #a60766
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
