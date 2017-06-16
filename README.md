@@ -6,7 +6,7 @@ Wedding gift list service made with Angular2, nodejs.
 
 front-end:
 ```
-git...
+git clone https://github.com/TommyR22/Angular2-GiftList-example.git
 cd ..
 npm install
 ng serve
@@ -14,22 +14,22 @@ ng serve
 
 backend:
 ```
-git...
-cd ..
-npm install
-ng serve
+node server.js
 ```
 
-## Motivation
+# Testing
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+```
+http://localhost:4200
+```
 
-## Installation
+## Usage
 
-Provide code examples and explanations of how to get the project.
+###### Server
 
+###### Client
 
 
 ## License
-
+[id]: https://github.com/TommyR22/Angular2-GiftList-example/blob/master/README.md "MIT"
 
