@@ -2,7 +2,7 @@
 
 Wedding gift list service made with these technologies:
 * **AngularJs 2**
-* **[Express.js]**(http://expressjs.com/), web framework for NodeJs. Express is the backend part of the MEAN stack(MongoDB,Express,Angular,NodeJs).
+* **[Express.js](http://expressjs.com/)**, web framework for NodeJs. Express is the backend part of the MEAN stack(MongoDB,Express,Angular,NodeJs).
 * **
 
 Deployed on **Heroku(Paas)**.
