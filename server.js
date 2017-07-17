@@ -9,7 +9,6 @@ var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var hbs = require('nodemailer-express-handlebars');
 var cors = require('cors');
-//https://github.com/yads/nodemailer-express-handlebars
 
 const app = express();
 app.use(cors());
@@ -22,7 +21,7 @@ app.use(bodyParser.json());
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
 
-// email route
+// setting email route
 let transporter = nodemailer.createTransport({
     service: 'Hotmail',
     auth: {
@@ -34,14 +33,16 @@ let transporter = nodemailer.createTransport({
 // add plugin handlebars for template
 var options = {
      viewEngine: {
-         extname: '.hbs',
-         layoutsDir: 'views/email/',
-         defaultLayout : 'template',
+         extname: '.hbs',			// extension of the views
+         layoutsDir: 'views/email/',		
+         defaultLayout : 'template',		
          partialsDir : 'views/partials/'
      },
-     viewPath: 'views/email/',
+     viewPath: 'views/email/',			// path views
      extName: '.hbs'
  };
+
+//attach the plugin to the nodemailer transporter
 transporter.use('compile', hbs(options));
 
 app.options('/sendmail', function (req, res) {
@@ -52,7 +53,7 @@ app.options('/sendmail', function (req, res) {
 app.post('/sendmail', function (req, res) {
 	console.log("--> sendMail");
 
-    // option to send email 1
+    	// option to send email 1
 	let mailOptions1 = {
 		from: req.body.copia,
 		to: "user1@hotmail.it",
@@ -65,6 +66,7 @@ app.post('/sendmail', function (req, res) {
 		  invitato: 'Message from: '+ req.body.friend
 		}
 	};
+	// option to send email 2
 	let mailOptions2 = {
 		from: req.body.copia,
 		to: "user2@hotmail.it",
@@ -83,22 +85,23 @@ app.post('/sendmail', function (req, res) {
     res.setHeader('Access-Control-Allow-Methods', 'POST');
     res.setHeader('Access-Control-Allow-Headers', '*');
 
-    transporter.sendMail(mailOptions1, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }else{
+	transporter.sendMail(mailOptions1, (error, info) => {
+        	if (error) {
+           		return console.log(error);
+        	}else{
 			res.end('It worked!');
 		}
         console.log('Message %s sent: %s', info.messageId, info.response);
-    });
+    	});
+	
 	transporter.sendMail(mailOptions2, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }else{
+        	if (error) {
+            		return console.log(error);
+        	}else{
 			res.end('It worked!');
 		}
         console.log('Message %s sent: %s', info.messageId, info.response);
-    });
+    	});
 
 	transporter.close();
 });
